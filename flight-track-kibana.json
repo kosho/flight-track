@@ -25,7 +25,7 @@
     }
   },
   {
-    "_id": "Dump1090-Line-Altitudes",
+    "_id": "Flight-Track-Line-Altitudes",
     "_type": "visualization",
     "_source": {
       "title": "Flight Track - Line Altitudes",
@@ -39,7 +39,7 @@
     }
   },
   {
-    "_id": "Dump1090-Line-Speeds",
+    "_id": "Flight-Track-Line-Speeds",
     "_type": "visualization",
     "_source": {
       "title": "Flight Track - Line Speeds",
@@ -53,7 +53,7 @@
     }
   },
   {
-    "_id": "Dump1090-Bar-Num-Airplanes",
+    "_id": "Flight-Track-Bar-Num-Airplanes",
     "_type": "visualization",
     "_source": {
       "title": "Flight Track - Bar Num Airplanes",
@@ -67,7 +67,7 @@
     }
   },
   {
-    "_id": "Dump1090-Pie-Airlines",
+    "_id": "Flight-Track-Pie-Airlines",
     "_type": "visualization",
     "_source": {
       "title": "Flight Track - Pie Airlines",
@@ -137,7 +137,7 @@
     }
   },
   {
-    "_id": "Dump1090-Title",
+    "_id": "Flight-Track-Title",
     "_type": "visualization",
     "_source": {
       "title": "Flight Track - Title",
