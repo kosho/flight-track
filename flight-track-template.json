@@ -1,0 +1,56 @@
+{
+  "template": "flight-track-*",
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas" : 0,
+      "index.refresh_interval": "5s"
+    },
+    "mappings": {
+      "_default_": {
+        "properties": {
+          "flight": {
+            "type": "keyword"
+          },
+          "altitude": {
+            "type": "integer"
+          },
+          "vert_rate": {
+            "type": "integer"
+          },
+          "speed": {
+            "type": "integer"
+          },
+          "seen": {
+            "type": "integer"
+          },
+          "squawk": {
+            "type": "keyword"
+          },
+          "validposition": {
+            "type": "boolean"
+          },
+          "messages": {
+            "type": "integer"
+          },
+          "hex": {
+            "type": "keyword"
+          },
+          "location": {
+            "type": "geo_point"
+          },
+          "track": {
+            "type": "integer"
+          },
+          "airline": {
+            "type": "keyword"
+          },
+          "validtrack": {
+            "type": "boolean"
+          }
+        },
+        "_all": {
+          "enabled": false
+        }
+      }
+    }
+}
