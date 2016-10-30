@@ -53,20 +53,6 @@
     }
   },
   {
-    "_id": "Flight-Track-Title",
-    "_type": "visualization",
-    "_source": {
-      "title": "Flight Track - Title",
-      "visState": "{\"title\":\"Flight Track - Title\",\"type\":\"markdown\",\"params\":{\"markdown\":\"# 📡 Realtime Flight Track\\n\\nThe data gathered from [Automatic Dependent Surveillance-Broadcast (ADS-B) ](https://www.faa.gov/nextgen/programs/adsb/) signals by a home made rasberry-pi receiver.\"},\"aggs\":[],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "Flight-Track-Line-Speeds",
     "_type": "visualization",
     "_source": {
@@ -91,6 +77,20 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"flight-track-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Flight-Track-Title",
+    "_type": "visualization",
+    "_source": {
+      "title": "Flight Track - Title",
+      "visState": "{\"title\":\"Flight Track - Title\",\"type\":\"markdown\",\"params\":{\"markdown\":\"# 📡 Realtime Flight Track\\n\\nThe data gathered from [Automatic Dependent Surveillance-Broadcast (ADS-B) ](https://www.faa.gov/nextgen/programs/adsb/) signals by a home made rasberry-pi receiver.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
       }
     }
   },
@@ -155,12 +155,12 @@
     "_type": "visualization",
     "_source": {
       "title": "Flight Track - Metrics",
-      "visState": "{\"title\":\"Flight Track - Metrics\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"hex\",\"customLabel\":\"Airplanes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"airline\",\"customLabel\":\"Airlines\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"altitude\",\"percents\":[50]}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"speed\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"track\"}}],\"listeners\":{}}",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"customLabel\":\"Airplanes\",\"field\":\"hex\"},\"schema\":\"metric\",\"type\":\"cardinality\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customLabel\":\"Airlines\",\"field\":\"airline\"},\"schema\":\"metric\",\"type\":\"cardinality\"},{\"enabled\":true,\"id\":\"3\",\"params\":{\"field\":\"altitude\"},\"schema\":\"metric\",\"type\":\"std_dev\"},{\"enabled\":true,\"id\":\"4\",\"params\":{\"field\":\"speed\"},\"schema\":\"metric\",\"type\":\"max\"},{\"enabled\":true,\"id\":\"5\",\"params\":{\"field\":\"track\"},\"schema\":\"metric\",\"type\":\"cardinality\"}],\"listeners\":{},\"params\":{\"fontSize\":60,\"handleNoResults\":true},\"title\":\"Flight Track - Metrics\",\"type\":\"metric\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"flight-track-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"flight-track-*\",\"query\":{\"query_string\":{\"query\":\"validposition:true\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }
