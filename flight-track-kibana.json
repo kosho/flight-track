@@ -81,20 +81,6 @@
     }
   },
   {
-    "_id": "Flight-Track-Pie-Airlines",
-    "_type": "visualization",
-    "_source": {
-      "title": "Flight Track - Pie Airlines",
-      "visState": "{\"title\":\"Flight Track - Pie Airlines\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"airline\",\"size\":30,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"flight-track-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "Flight-Track-Bar-Valid-Position",
     "_type": "visualization",
     "_source": {
@@ -161,6 +147,20 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"flight-track-*\",\"query\":{\"query_string\":{\"query\":\"validposition:true\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Flight-Track-Pie-Airlines",
+    "_type": "visualization",
+    "_source": {
+      "title": "Flight Track - Pie Airlines",
+      "visState": "{\"title\":\"Flight Track - Pie Airlines\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"flight\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"airline\",\"size\":30,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"JAL\":\"#E24D42\",\"ANA\":\"#0A50A1\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"flight-track-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }
