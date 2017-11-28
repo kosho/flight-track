@@ -1,9 +1,9 @@
 {
-  "template": "flight-track-*",
+  "index_patterns": ["flight-track-*"],
     "settings": {
       "number_of_shards": 1,
-      "number_of_replicas" : 0,
-      "index.refresh_interval": "5s"
+      "number_of_replicas" : 1,
+      "index.refresh_interval": "60s"
     },
     "mappings": {
       "_default_": {

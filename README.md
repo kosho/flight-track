@@ -10,7 +10,7 @@ You must have set up your own [ADS-B](https://www.faa.gov/nextgen/programs/adsb/
 
 ### Elastic Stack
 
-You must install Elasticsearch and Kibana version 5.0.0 or abover properly. Using [Elastic Cloud](http://cloud.elastic.co) could be a good alternative choise. Logstash 5.0.0 or higher will be used to fetch the airplace location periodically from the dump1090 and to ingest the data to Elasticsearch. 
+You must install Elasticsearch and Kibana version 6.0.0 or abover properly. Using [Elastic Cloud](http://cloud.elastic.co) could be a good alternative choise. Logstash 6.0.0 or higher will be used to fetch the airplace location periodically from the dump1090 and to ingest the data to Elasticsearch. 
 
 ## Setup and Run
 
@@ -30,7 +30,11 @@ $ logstash -f flight-track-logstash.conf
 
 ### Import Kibana Visuals and Dashboard
 
-1. Open Kibana and go to Management > Index Patterns. Type in `flight-track` as the index name and create the index pattern. This step does not work until the data is properly ingested into the Elasticsearch index.
-2. Go to Management > Saved Objects and click on Import, and select `flight-track-kibana.json` by the file chooser.
-3. Go to Dashboard and click on **Flight Track - Dashboard** from the list of the dashboards.
+Type in the following command to load the dashboard into Kibana. It will create the index pattern, visualizations and the dashboard.
 
+```
+$ curl -XPOST -d @flight-track-kibana.json \
+ "your_kibana_host:5601/api/kibana/dashboards/import" \
+  -H 'kbn-xsrf: true' \
+  -H 'Content-type: application/json'
+```
